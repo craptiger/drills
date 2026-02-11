@@ -1,51 +1,80 @@
 [
   {
     "id": "1",
-    "title": "Falkenberg",
+    "title": "1 Falkenberg",
     "gif": "assets/drill-1.gif",
     "text": "Instructions\n\n1 BH Topspin in BH (diagonal) B: Block in BH\n\n2 FH Topspin from BH in BH (diagonal) B: Block in FH\n\n3 FH Topspin from FH in BH (parallel) B: Block in BH\n\n... and repeat!"
   },
   {
     "id": "2",
-    "title": "Passive Play: Block from Middle - Outside, alternating",
+    "title": "3 Passive Play: Block from Middle - Outside, alternating",
     "gif": "assets/drill-2.gif",
     "text": "Instructions\n\n1 FH Block to FH\n\nB: Topspin to BH or FH\n\n2 FH or BH Block to FH\n\nB: Topspin to Middle\n\n... and repeat!"
   },
   {
     "id": "3",
-    "title": "Falkenberg (Small)",
+    "title": "4 Falkenberg (Small)",
     "gif": "assets/drill-3.gif",
     "text": "Instructions\n\n1 BH Topspin to BH (diagonal)\n\nB: Block to BH\n\n2 FH Topspin from BH to BH (diagonal)\n\nB: Block to Middle\n\n3 FH Topspin from Middle to BH\n\nB: Block to BH\n\n... and repeat!"
   },
   {
     "id": "4",
-    "title": "Short Serve | FH Opening from Middle | FH Topspin",
+    "title": "7 Short Serve | FH Opening from Middle | FH Topspin",
     "gif": "assets/drill-4.gif",
     "text": "Instructions\n\n1 Short serve, free placement\n\nB: Push to Middle long\n\n2 VH Topspin to RH\n\nB:Block to VH (wide)\n\n3 FH Topspin free placement\n\n... and finish the rally!"
   },
   {
     "id": "5",
-    "title": "BH | Middle | FH",
+    "title": "6 BH | Middle | FH",
     "gif": "assets/drill-5.gif",
     "text": "Instructions\n\n1 BH Topspin to BH (diagonal)\n\nB: Block to Middle\n\n2 FH Topspin from Middle to BH\n\nB: Block to FH\n\n3 FH Topspin to BH (parallel)\n\nB: Block to BH\n\n... and repeat!"
   },
   {
     "id": "6",
-    "title": "Middle - Outside alternating",
+    "title": "10 Middle - Outside alternating",
     "gif": "assets/drill-6.gif",
     "text": "Instructions\n\n1 FH topspin from middle to BH\n\nB: Block to FH or BH\n\n2 FH or BH topspin to BH\n\nB: Block to middle\n\n... and repeat!"
   },
   {
     "id": "7",
-    "title": "Serve long | Take over the attack",
+    "title": "25 Serve long | Take over the attack",
     "gif": "assets/drill-7.gif",
     "text": "Instructions\n\n1 Serve to BH (long)\n\nB: Topspin to BH\n\n2 Block with kick/ spin or BH topspin to BH\n\nB: Free play\n\n... and finish the rally!"
   },
   {
     "id": "8",
-    "title": "FH topspin left-right",
+    "title": "33 FH topspin left-right",
     "gif": "assets/drill-8.gif",
     "text": "Instructions\n\n1 FH topspin to FH (diagonal)\n\nB: Block to FH\n\n2 FH topspin to BH (parallel)\n\nB: Block to FH\n\n... and repeat!"
+  },
+  {
+    "id": "9",
+    "title": "36 BH | Middle | BH | FH",
+    "gif": "assets/drill-9.gif",
+    "text": "Instructions\n\n1 BH topspin to BH (diagonal)\n\nB: Block to middle\n\n2 FH topspin from middle to BH\n\nB: Block to BH\n\n3 BH topspin to BH (diagonal)\n\nB: Block to FH\n\n4 FH topspin to BH (parallel)\n\nB: Block to BH"
+  },
+  {
+    "id": "10",
+    "title": "39 BH Mid-Distance Positioning 2x2",
+    "gif": "assets/drill-10.gif",
+    "text": "Instructions\n\n1 BH counter to BH (at a medium distance from the table)\n\nB: Counter to BH (at a medium distance)\n\n2 BH counter to BH (after the ball, take half a step back)\n\nB: Counter to BH (slightly further from the table)\n\n3 BH topspin to BH (at a medium distance)\n\nB: Block to BH (at a medium distance)\n\n4 BH topspin to BH (after the ball, take half a step toward the table)\n\nB: Block to BH (at a medium distance)\n\n... and repeat!"
+  },
+  {
+    "id": "11",
+    "title": "40 FH Mid-Distance Positioning 2x2",
+    "gif": "assets/drill-11.gif",
+    "text": "Instructions\n\n1 FH counter to FH (at a medium distance from the table)\n\nB: Counter to FH (at a medium distance)\n\n2 FH counter to FH (after the ball, take half a step back)\n\nB: Counter to FH (slightly further from the table)\n\n3 FH topspin to FH (at a medium distance)\n\nB: Block to FH (at a medium distance)\n\n4 FH topspin to FH (after the ball, take half a step toward the table)\n\nB: Block to FH (at a medium distance)\n\n... and repeat!"
+  },
+  {
+    "id": "12",
+    "title": "31 Big 8 parallel",
+    "gif": "assets/drill-12.gif",
+    "text": "Instructions\n\n1 FH topspin from FH to BH (parallel)\n\nB: Block to BH (diagonal)\n\n2 BH topspin from BH to FH (parallel)\n\nB: Block to FH (diagonal)\n\n... and repeat!"
+  },
+  {
+    "id": "13",
+    "title": "32 Big 8 diagonal",
+    "gif": "assets/drill-13.gif",
+    "text": "Instructions\n\n1 FH topspin to FH (diagonal)\n\nB: Block to BH (parallel)\n\n2 BH topspin to BH (diagonal)\n\nB: Block to FH (parallel)"
   }
-
 ]
