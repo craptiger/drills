@@ -46,6 +46,11 @@ body {
 }
 
 .muted { color: var(--muted); margin-top: 0; }
+.version {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--muted);
+}
 
 .list {
   display: grid;
