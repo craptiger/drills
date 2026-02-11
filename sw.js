@@ -10,18 +10,22 @@ const CORE_ASSETS = [
   "version.json"
 ];
 
-async function getVersion() {
-  const res = await fetch("version.json", { cache: "no-store" });
+// This will be set during install/activate
+let CACHE_NAME = `${BASE_CACHE}-0.0.0`;
+
+async function readVersion() {
+  // IMPORTANT: do not use no-store here; we only read at install/activate
+  const res = await fetch("version.json");
   const data = await res.json();
   return data.version || "0.0.0";
 }
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
-    const version = await getVersion();
-    const cacheName = `${BASE_CACHE}-${version}`;
+    const version = await readVersion();
+    CACHE_NAME = `${BASE_CACHE}-${version}`;
 
-    const cache = await caches.open(cacheName);
+    const cache = await caches.open(CACHE_NAME);
     await cache.addAll(CORE_ASSETS);
 
     self.skipWaiting();
@@ -30,11 +34,14 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil((async () => {
-    const version = await getVersion();
-    const expected = `${BASE_CACHE}-${version}`;
+    // Re-read version on activate so the expected cache aligns with latest deploy
+    const version = await readVersion();
+    CACHE_NAME = `${BASE_CACHE}-${version}`;
 
     const keys = await caches.keys();
-    await Promise.all(keys.map(k => (k === expected ? null : caches.delete(k))));
+    await Promise.all(
+      keys.map(k => (k.startsWith(`${BASE_CACHE}-`) && k !== CACHE_NAME) ? caches.delete(k) : null)
+    );
 
     self.clients.claim();
   })());
@@ -44,20 +51,24 @@ self.addEventListener("fetch", (event) => {
   const req = event.request;
   const url = new URL(req.url);
 
-  // same-origin only
+  // Same-origin only
   if (url.origin !== self.location.origin) return;
 
+  // Prevent recursion / oddness: always go to network for version.json
+  if (url.pathname.endsWith("/version.json") || url.pathname.endsWith("version.json")) {
+    event.respondWith(fetch(req));
+    return;
+  }
+
   event.respondWith((async () => {
-    const version = await getVersion();
-    const cacheName = `${BASE_CACHE}-${version}`;
-    const cache = await caches.open(cacheName);
+    const cache = await caches.open(CACHE_NAME);
 
     const cached = await cache.match(req);
     if (cached) return cached;
 
     const res = await fetch(req);
 
-    // Runtime cache successful GETs (e.g., assets/*.gif)
+    // Cache successful GETs (e.g., assets/*.gif)
     if (req.method === "GET" && res.ok) {
       cache.put(req, res.clone());
     }
