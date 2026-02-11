@@ -7,8 +7,11 @@ const CORE_ASSETS = [
   "drill.js",
   "drills.json",
   "manifest.webmanifest",
-  "version.json"
+  "version.json",
+  "assets/icon-192.png",
+  "assets/icon-512.png"
 ];
+
 
 // This will be set during install/activate
 let CACHE_NAME = `${BASE_CACHE}-0.0.0`;
