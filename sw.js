@@ -1,4 +1,31 @@
-const CACHE_NAME = "drills-pwa-v1";
+let CACHE_NAME = "drills-pwa";
+
+self.addEventListener("install", event => {
+  event.waitUntil((async () => {
+
+    const res = await fetch("version.json");
+    const { version } = await res.json();
+
+    CACHE_NAME = `drills-pwa-${version}`;
+
+    const cache = await caches.open(CACHE_NAME);
+
+    await cache.addAll([
+      "index.html",
+      "drill.html",
+      "styles.css",
+      "app.js",
+      "drill.js",
+      "drills.json",
+      "manifest.webmanifest",
+      "version.json"
+    ]);
+
+    self.skipWaiting();
+
+  })());
+});
+
 const CORE_ASSETS = [
   "index.html",
   "drill.html",
