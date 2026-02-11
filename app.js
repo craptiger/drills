@@ -43,16 +43,17 @@ async function checkForUpdate(currentVersion) {
   localStorage.setItem("appVersion", currentVersion);
 }
 
-async function registerServiceWorker() {
+async function registerServiceWorker(version) {
   if (!("serviceWorker" in navigator)) return;
 
   try {
-    // Add a cache-busting query so the browser fetches the latest sw.js after you bump version.json
-    await navigator.serviceWorker.register(`sw.js?cb=${Date.now()}`);
+    // Only changes when version.json changes
+    await navigator.serviceWorker.register(`sw.js?v=${encodeURIComponent(version || "0")}`);
   } catch {
     // ignore
   }
 }
+
 
 async function main() {
   const version = await showVersion();
