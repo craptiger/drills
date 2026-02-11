@@ -35,13 +35,21 @@ async function checkForUpdate(currentVersion) {
   if (!currentVersion) return;
 
   const stored = localStorage.getItem("appVersion");
+  const reloadedFor = sessionStorage.getItem("reloadedForVersion");
+
+  // If version changed, reload once per session to pick up new assets
   if (stored && stored !== currentVersion) {
-    // Version changed: force refresh to pick up the new SW + assets
-    location.reload();
-    return;
+    if (reloadedFor !== currentVersion) {
+      sessionStorage.setItem("reloadedForVersion", currentVersion);
+      localStorage.setItem("appVersion", currentVersion); // set before reload to prevent loops
+      location.reload();
+      return;
+    }
   }
+
   localStorage.setItem("appVersion", currentVersion);
 }
+
 
 async function registerServiceWorker(version) {
   if (!("serviceWorker" in navigator)) return;
@@ -66,8 +74,7 @@ async function main() {
     document.getElementById("drillList").innerHTML =
       `<div class="error">Error: ${escapeHtml(String(e.message || e))}</div>`;
   }
-
-  await registerServiceWorker();
+  await registerServiceWorker(version);
 }
 
 main();
