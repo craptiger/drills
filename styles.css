@@ -87,3 +87,9 @@ body {
   border-radius: 14px;
   background: rgba(239,68,68,0.12);
 }
+.version {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--muted);
+}
+
