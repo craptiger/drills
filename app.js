@@ -42,6 +42,19 @@ async function main() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").catch(() => {});
   }
+  await checkForUpdate();
+}
+async function checkForUpdate() {
+  const stored = localStorage.getItem("appVersion");
+
+  const res = await fetch("version.json", { cache: "no-store" });
+  const { version } = await res.json();
+
+  if (stored && stored !== version) {
+    location.reload(true);
+  }
+
+  localStorage.setItem("appVersion", version);
 }
 
 main();
