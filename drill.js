@@ -30,7 +30,7 @@ async function showVersion() {
   }
 }
 
-async function registerServiceWorker() {
+async function registerServiceWorker(version) {
   if (!("serviceWorker" in navigator)) return;
   try {
     await navigator.serviceWorker.register(`sw.js?v=${encodeURIComponent(version || "0")}`);
@@ -40,7 +40,7 @@ async function registerServiceWorker() {
 }
 
 async function main() {
-  await showVersion();
+  const version = await showVersion();
 
   const id = getId();
   if (!id) {
@@ -54,7 +54,7 @@ async function main() {
   if (!drill) {
     document.getElementById("title").textContent = "Not found";
     document.getElementById("text").innerHTML = "<p>Drill not found.</p>";
-    await registerServiceWorker();
+    await registerServiceWorker(version);
     return;
   }
 
@@ -67,7 +67,7 @@ async function main() {
 
   document.getElementById("text").innerHTML = renderText(drill.text);
 
-  await registerServiceWorker();
+  await registerServiceWorker(version);
 }
 
 main();
