@@ -3,6 +3,14 @@ async function loadDrills() {
   if (!res.ok) throw new Error("Failed to load drills.json");
   return res.json();
 }
+async function showVersion() {
+  try {
+    const res = await fetch("version.json", { cache: "no-store" });
+    const data = await res.json();
+    document.getElementById("version").textContent =
+      `v${data.version}`;
+  } catch {}
+}
 
 function escapeHtml(s) {
   return s.replace(/[&<>"']/g, c => ({
