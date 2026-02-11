@@ -76,5 +76,29 @@
     "title": "32 Big 8 diagonal",
     "gif": "assets/drill-13.gif",
     "text": "Instructions\n\n1 FH topspin to FH (diagonal)\n\nB: Block to BH (parallel)\n\n2 BH topspin to BH (diagonal)\n\nB: Block to FH (parallel)"
+  },
+  {
+    "id": "14",
+    "title": "9 Short return | BH opening | FH follow-up",
+    "gif": "assets/drill-14.gif",
+    "text": "Instructions\n\n1 Return drill! Passive player starts with serve\n\nB: Short underspin serve\n\n2 Push short to BH to middle\n\nB: Long push to BH\n\n3 BH topspin to BH (diagonal)\n\nB: Block to FH\n\n4 FH topspin to BH (parallel)\n\nB: Free block\n\n... and finish the rally!"
+  },
+  {
+    "id": "15",
+    "title": "27 3-point Forehand",
+    "gif": "assets/drill-15.gif",
+    "text": "Instructions\n\n1 FH topspin from FH to BH (parallel)\n\nB: Block to middle\n\n2 FH topspin from middle to BH\n\nB: Block to BH\n\n3 FH topspin from BH to BH (diagonal)B: Block to FH\n\n... and repeat!"
+  },
+  {
+    "id": "16",
+    "title": "24 Serve side underspin | Opening from BH",
+    "gif": "assets/drill-16.gif",
+    "text": "Instructions\n\n1 Side underspin serve to BH (short to half-long)\n\nB: Long push to BH\n\n2 FH topspin or BH topspin to BH\n\nB: Block to middle to FH\n\n3 FH topspin across the entire table\n\n... and finish the rally!"
+  },
+  {
+    "id": "17",
+    "title": "51 2x BH topspin | 1x FH topspin from BH",
+    "gif": "assets/drill-17.gif",
+    "text": "Instructions\n\n1 BH topspin to BH\n\nB: Block to BH\n\n2 BH topspin to BH\n\nB: Block to BH\n\n3 FH topspin to BH\n\nB: Block to BH\n\n... and repeat!"
   }
 ]
