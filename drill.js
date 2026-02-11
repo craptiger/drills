@@ -33,7 +33,7 @@ async function showVersion() {
 async function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   try {
-    await navigator.serviceWorker.register(`sw.js?cb=${Date.now()}`);
+    await navigator.serviceWorker.register(`sw.js?v=${encodeURIComponent(version || "0")}`);
   } catch {
     // ignore
   }
