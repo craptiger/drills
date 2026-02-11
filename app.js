@@ -32,6 +32,7 @@ async function main() {
   try {
     const drills = await loadDrills();
     renderList(drills);
+    await showVersion();
   } catch (e) {
     document.getElementById("drillList").innerHTML =
       `<div class="error">Error: ${escapeHtml(String(e.message || e))}</div>`;
