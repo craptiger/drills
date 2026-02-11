@@ -45,13 +45,22 @@ self.addEventListener("install", (event) => {
 });
 
 // Activate: cleanup old caches
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.map(k => (k === CACHE_NAME ? null : caches.delete(k))))
-    )
-  );
-  self.clients.claim();
+self.addEventListener("activate", event => {
+  event.waitUntil((async () => {
+
+    const res = await fetch("version.json");
+    const { version } = await res.json();
+    const expected = `drills-pwa-${version}`;
+
+    const keys = await caches.keys();
+
+    await Promise.all(
+      keys.map(k => k !== expected ? caches.delete(k) : null)
+    );
+
+    self.clients.claim();
+
+  })());
 });
 
 // Fetch: cache-first for same-origin assets, with runtime caching for GIFs
